@@ -4,7 +4,7 @@ Sand Tetris, also known as Sandtrix or Setris, is a puzzle game that combines el
 
 
 ## Requirements 
----
+
 Before building the project, make sure you have the following installed:
 
 - **CMake minimum 3.2.8** — for generating build files
@@ -14,7 +14,7 @@ Before building the project, make sure you have the following installed:
     Definitely check out the [SFML Docs][sfml-docs], [CMake Docs][cmake-docs], and [install git][git-install] if you havent yet!
 
 ## Installation
----
+
 ```bash
 #MacOs
 brew install cmake
@@ -33,7 +33,7 @@ Windows 10/11 [chocolatey](https://chocolatey.org/install) package manager insta
 
 
 ## CMake for our project
----
+
 
 ### What does CMake do
 
