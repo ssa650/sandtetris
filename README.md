@@ -25,9 +25,9 @@ sudo pacman -S cmake
 #Windows 10/11
 choco install cmake
 ```
-MacOs [homebrew][brew-install] package manager installation guild 
+MacOs [homebrew][brew-install] package manager installation guide 
 
-windows 10/11 [chocolatey](https://chocolatey.org/install) package manager you can install it
+Windows 10/11 [chocolatey](https://chocolatey.org/install) package manager installation guide
 
 **You will also need git installed on your machine because of the way CMake uses sfml as a dependency**
 
