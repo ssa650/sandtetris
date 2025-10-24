@@ -2,6 +2,6 @@
 
 int main() {
     
-    void backGroundUi();
+    backGroundUi();
     return 0;
 }

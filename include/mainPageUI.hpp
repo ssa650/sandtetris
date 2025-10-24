@@ -1,4 +1,4 @@
 #pragma once
-#include <SFMLGraphics.hpp>
+#include <SFML/Graphics.hpp>
 
 void backGroundUi();
