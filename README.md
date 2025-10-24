@@ -25,8 +25,9 @@ sudo pacman -S cmake
 #Windows 10/11
 choco install cmake
 ```
-if you dont have the homebrew package manager you can install it [here][brew-install]
-if you dont have the chocolatey package manager you can install it [here](https://chocolatey.org/install)
+MacOs [homebrew][brew-install] package manager installation guild 
+
+windows 10/11 [chocolatey](https://chocolatey.org/install) package manager you can install it
 
 **You will also need git installed on your machine because of the way CMake uses sfml as a dependency**
 
@@ -47,7 +48,7 @@ if you dont have the chocolatey package manager you can install it [here](https:
 - CMake allows us to compile files incrementally meaning only the files that changed are recompiled instead of the whole project
 - CMake also keeps the project orginized and portable allowing our code to build seamlessly on every OS
 
-## Basic CMake commands 
+### Basic CMake commands 
 
 - CMake stores build files along with the executable file in the build directory
 - the command: `cmake -S . -B build` gets CMake to replace or make a new build directory and then make all the build files inside of it
