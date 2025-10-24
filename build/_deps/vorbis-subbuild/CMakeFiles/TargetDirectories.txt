@@ -1,0 +1,3 @@
+/Users/shayan/sandtetris/build/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate.dir
+/Users/shayan/sandtetris/build/_deps/vorbis-subbuild/CMakeFiles/edit_cache.dir
+/Users/shayan/sandtetris/build/_deps/vorbis-subbuild/CMakeFiles/rebuild_cache.dir
