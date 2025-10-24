@@ -1,0 +1,64 @@
+# Build and binary output
+build/
+bin/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Compiled object & binary files
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+
+# CMake & IDE generated files
+compile_commands.json
+CMakeUserPresets.json
+CMakeLists.txt.user
+
+# Logs, temporary, debug
+*.log
+*.tmp
+*.swp
+*.bak
+*.old
+*.core
+
+# VS Code
+.vscode/
+.vscode/*.json
+.vscode/settings.sample.json
+.history/
+*.code-workspace
+
+# MacOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Linux temporary files
+*~
+.nfs*
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+
+# Other tools
+.idea/
+.cache/

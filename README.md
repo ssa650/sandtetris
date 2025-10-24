@@ -11,7 +11,7 @@ Before building the project, make sure you have the following installed:
 - **Git latest** - CMake installs SFML directly into our project through git so make sure you have git installed on your machine 
 - **SFML installed in project directory** - there is no need to install SFML onto your machine as CMake is instructed to do it for us
 
-    Definitely check out the [SFML Docs][sfml-docs], [CMake Docs][make-docs], and [install git][git-install] if you havent yet!
+    Definitely check out the [SFML Docs][sfml-docs], [CMake Docs][cmake-docs], and [install git][git-install] if you havent yet!
 
 ## Installation
 ---
@@ -62,7 +62,7 @@ if you dont have the chocolatey package manager you can install it [here](https:
     - the build files are for a different CPU architecture
     - or the `compile_commands.json` file doesnt belong to you (build might still work but your code editor integration will break)
 
-**the best practice would be to always rebuild the build directory as we all probably have different OSs, cpus, compilers, and we all 100% have different `compile_commands.json` files**
+**I have set up gitignore to ignore all build files, SFML build files, vscode files etc so you dont have to worry about pushing your build folder**
 
 - So after you replace the build directory and build files with the `cmake -S . -B build` command everything should compile and work perfectly on your machine
 - the command: `cmake -S . -B build` only gets CMake to create the appropriate files for your environment
