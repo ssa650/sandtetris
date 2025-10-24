@@ -15,18 +15,18 @@ Before building the project, make sure you have the following installed:
 
 ## Installation
 ---
-`
-#MacOs
-brew install cmake
-[if you dont have the homebrew package manager you can install it here][brew-install]
 
-#Arch Linux 🐧
-sudo pacman -S cmake
+`#MacOs`
+`brew install cmake`
+if you dont have the homebrew package manager you can install it [here][brew-install]
 
-#Windows 10/11
+`#Arch Linux 🐧`
+`sudo pacman -S cmake`
+
+`#Windows 10/11`
 [Download CMake here][cmake-download-link]
-`
-    **You will also need git installed on your machine because of the way CMake uses sfml as a dependency**
+
+**You will also need git installed on your machine because of the way CMake uses sfml as a dependency**
 
 
 ## CMake for our project
