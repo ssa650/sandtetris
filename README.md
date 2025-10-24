@@ -24,7 +24,7 @@ if you dont have the homebrew package manager you can install it [here][brew-ins
 `sudo pacman -S cmake`
 
 `#Windows 10/11`
-[Download CMake here][cmake-download-link]
+[Download CMake here][cmake-install]
 
 **You will also need git installed on your machine because of the way CMake uses sfml as a dependency**
 
