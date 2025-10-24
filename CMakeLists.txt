@@ -20,11 +20,15 @@ FetchContent_MakeAvailable(SFML)
 # then tools like vscodes C++ extension can then read it and know where headers live, what defines are active etc
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# here we give CMake the files we want the compile and what directories they live in
-add_executable(main src/main.cpp)
+# here we tell CMake to add all .cpp files for src to the executable file
+file(GLOB SOURCES "src/*.cpp")
+add_executable(sandtetris ${SOURCES})
+
+# here we tell CMake where we store our headers
+target_include_directories(sandtetris PRIVATE include)
 
 # here we tell CMake were using C++20
-target_compile_features(main PRIVATE cxx_std_20)
+target_compile_features(sandtetris PRIVATE cxx_std_20)
 
 # this tells CMake to link the following librarys to the executable file
-target_link_libraries(main PRIVATE SFML::Graphics)
+target_link_libraries(sandtetris PRIVATE SFML::Graphics)
