@@ -8,7 +8,7 @@ Sand Tetris, also known as Sandtrix or Setris, is a puzzle game that combines el
 Before building the project, make sure you have the following installed:
 
 - **CMake minimum 3.2.8** — for generating build files
-- **Git latest** - CMake installs SFML directly into our project through git so make sure you have git installed on your machine 
+- **Git latest** - CMake installs raylib.h directly into our project through git so make sure you have git installed on your machine 
 - **raylib.h installed in project directory** - there is no need to install raylib.h onto your machine as CMake is instructed to do it for us
 
     Definitely check out the [raylib.h Docs][raylib-docs], [CMake Docs][cmake-docs], and [install git][git-install] if you havent yet!
