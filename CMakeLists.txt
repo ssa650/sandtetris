@@ -20,7 +20,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # here we tell CMake to add all .cpp files for src to the executable file
 file(GLOB SOURCES "src/*.cpp")
-add_executable(sandtetris ${SOURCES})
+add_executable(sandtetris ${SOURCES} "include/block.h" "include/position.h" "src/position.cpp" "include/colors.h" "src/colors.cpp" "src/block.cpp" "src/blocks.cpp")
 
 # here we tell CMake where we store our headers
 target_include_directories(sandtetris PRIVATE include)
