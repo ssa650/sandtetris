@@ -1,5 +1,5 @@
 # Sand Tetris C++ project - ENSC-151
----
+
 Sand Tetris, also known as Sandtrix or Setris, is a puzzle game that combines elements of Tetris with a unique twist: when the blocks land, they turn into sand and crumble. The objective is to align blocks of the same color to form continuous lines, which then disappear, earning points for the player.
 
 
@@ -9,9 +9,9 @@ Before building the project, make sure you have the following installed:
 
 - **CMake minimum 3.2.8** — for generating build files
 - **Git latest** - CMake installs SFML directly into our project through git so make sure you have git installed on your machine 
-- **SFML installed in project directory** - there is no need to install SFML onto your machine as CMake is instructed to do it for us
+- **raylib.h installed in project directory** - there is no need to install raylib.h onto your machine as CMake is instructed to do it for us
 
-    Definitely check out the [SFML Docs][sfml-docs], [CMake Docs][cmake-docs], and [install git][git-install] if you havent yet!
+    Definitely check out the [raylib.h Docs][raylib-docs], [CMake Docs][cmake-docs], and [install git][git-install] if you havent yet!
 
 ## Installation
 
@@ -29,7 +29,7 @@ MacOs [homebrew][brew-install] package manager installation guide
 
 Windows 10/11 [chocolatey](https://chocolatey.org/install) package manager installation guide
 
-**You will also need git installed on your machine because of the way CMake uses sfml as a dependency**
+**You will also need git installed on your machine because of the way CMake uses raylib.h as a dependency**
 
 
 ## CMake for our project
@@ -79,7 +79,7 @@ Windows 10/11 [chocolatey](https://chocolatey.org/install) package manager insta
 [cmake-install]: https://cmake.org/download/
 [git-install]: https://git-scm.com/install/
 
-[sfml-docs]: https://www.sfml-dev.org/documentation/3.0.2/index.html
+[raylib-docs]: https://www.raylib.com/index.html
 [cmake-docs]: https://cmake.org/cmake/help/latest/
 
 

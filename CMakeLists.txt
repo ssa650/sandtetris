@@ -7,13 +7,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 # CMake grabs and builds the whole SFML library
 include(FetchContent)
-FetchContent_Declare(SFML
-    GIT_REPOSITORY https://github.com/SFML/SFML.git
-    GIT_TAG 3.0.2
-    GIT_SHALLOW ON
-    EXCLUDE_FROM_ALL
-    SYSTEM)
-FetchContent_MakeAvailable(SFML)
+FetchContent_Declare(raylib
+    GIT_REPOSITORY https://github.com/raysan5/raylib.git
+    GIT_TAG 5.5  # latest stable version
+)
+FetchContent_MakeAvailable(raylib)
 
 # this tells CMake to make the compile_commands.json inside out build folder 
 # the JSON file contains every compiler command CMake uses
@@ -31,4 +29,5 @@ target_include_directories(sandtetris PRIVATE include)
 target_compile_features(sandtetris PRIVATE cxx_std_20)
 
 # this tells CMake to link the following librarys to the executable file
-target_link_libraries(sandtetris PRIVATE SFML::Graphics)
+target_link_libraries(sandtetris raylib)
+
