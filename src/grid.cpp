@@ -28,15 +28,22 @@ void Grid::print(){
     }
 }
 
-void Grid::Draw() {
+void Grid::LockBlock(const vector<Position>& positions, int id) {
+    for (const Position& pos : positions) {
+        if (pos.row >= 0 && pos.row < numRows && pos.column >= 0 && pos.column < numCols) {
+            grid[pos.row][pos.column] = id;
+        }
+    }
+}
+
+void Grid::Draw(int offsetX, int offsetY) {
     for(int row = 0; row < numRows; row++){
         for(int column =0; column < numCols; column++){
             int cellValue = grid[row][column];
-            DrawRectangle(column * cellSize+1, row * cellSize+1, cellSize-1, cellSize-1, colors[cellValue]);
+            int x = offsetX + column * cellSize + 1;
+            int y = offsetY + row * cellSize + 1;
+            DrawRectangle(x, y, cellSize-1, cellSize-1, colors[cellValue]);
         }
     
     }
-    ClearBackground(colors[1]);
 }
-
-
