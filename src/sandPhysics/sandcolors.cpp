@@ -1,11 +1,27 @@
-
-#include "../../include/sandPhysics/sandColor.h"
+/******************************************************************
+ * sandcolors.cpp -- Sand particle color variation generator
+ *
+ * Description: Generates color variations for sand particles to create
+ *              visual diversity. Each sand particle gets a slightly
+ *              different shade of its base color.
+ *
+ * Authors: Jethro Rolfe, Carson Chen, Howard Li, Jason Mai, Shayan Sharvini
+ *
+ *******************************************************************/
+#include "sandPhysics/sandColor.h"
 #include "colors.h"
 #include <cstdlib>
 #include <algorithm>
 
-// Returns a randomized shade variation of the base sand color
-// Creates lighter or darker versions for visual variety between sand particles
+/******************************************************************
+ * GetSandColorVariation -- Create a randomized shade of base color
+ *
+ * Parameters: baseColorIndex -- index of base color (2-8 for blocks)
+ * Modifies: nothing
+ *
+ * Returns: Color with randomized RGB variation from base color
+ *          Creates visual variety while maintaining color identity
+ *******************************************************************/
 Color GetSandColorVariation(int baseColorIndex) {
     // Get the base colors array
     // 0=grey, 1=black, 2=orange, 3=blue, 4=yellow, 5=cyan, 6=green, 7=purple, 8=red
