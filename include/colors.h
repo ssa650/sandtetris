@@ -11,6 +11,11 @@ extern const Color blue;
 extern const Color red;
 extern const Color yellow;
 extern const Color purple;
+extern const Color cyan;
+extern const Color orange;
+
+// Test sand colors - matches tetris block colors
+extern const vector<Color> testSandColors;
 
 vector<Color> GetCellColors();
 

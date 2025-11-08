@@ -1,20 +1,21 @@
 #include "block.h"
+#include "config.h"
 
 using namespace std;
 
 Block::Block()
+	: cellSize(GameConfig::CELL_SIZE),
+	  rotationState(0),
+	  colors(GetCellColors()),
+	  rowOffset(0),
+	  columnOffset(0)
 {
-	cellSize = 30;
-	rotationState = 0;
-	colors = GetCellColors();
-	rowOffset = 0;
-	columnOffset = 0;
 }
 
-void Block::Draw(int offsetX, int offsetY)
+void Block::Draw(int offsetX, int offsetY) const
 {
 	vector<Position> tiles = GetCellPositions();
-	for (Position item : tiles)
+	for (const Position& item : tiles)
 	{
 		int x = offsetX + item.column * cellSize + 1;
 		int y = offsetY + item.row * cellSize + 1;
@@ -48,11 +49,11 @@ void Block::UndoRotation()
 	rotationState = (rotationState - 1 + rotationCount) % rotationCount;
 }
 
-vector<Position> Block::GetCellPositions()
+vector<Position> Block::GetCellPositions() const
 {
-	vector<Position> tiles = cells[rotationState];
+	const vector<Position>& tiles = cells.at(rotationState);
 	vector<Position> movedTiles;
-	for (Position item : tiles)
+	for (const Position& item : tiles)
 	{
 		Position newPos = Position(item.row + rowOffset, item.column + columnOffset);
 		movedTiles.push_back(newPos);

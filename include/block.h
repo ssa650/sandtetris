@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <map>
+#include <raylib.h>
 
 #include "colors.h"
 #include "position.h"
@@ -11,11 +12,21 @@ class Block
 {
 public:
 	Block();
-	void Draw(int offsetX, int offsetY);
+	void Draw(int offsetX, int offsetY) const;
 	void Move(int rows, int columns);
 	void Rotate();
 	void UndoRotation();
-	vector<Position> GetCellPositions();
+	vector<Position> GetCellPositions() const;
+
+	// Getters
+	int GetId() const { return id; }
+	const map<int, vector<Position>>& GetCells() const { return cells; }
+	int GetRotationState() const { return rotationState; }
+
+	// Setters
+	void SetId(int newId) { id = newId; }
+
+protected:
 	int id;
 	map<int, vector<Position>> cells;
 

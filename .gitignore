@@ -41,6 +41,16 @@ CMakeLists.txt.user
 .history/
 *.code-workspace
 
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.filters
+*.vcxproj.user
+CMakeSettings.json
+
 # MacOS system files
 .DS_Store
 .AppleDouble

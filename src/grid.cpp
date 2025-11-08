@@ -1,14 +1,16 @@
 #include "grid.h"
+#include "config.h"
 #include <iostream>
 #include "colors.h"
 using namespace std;
 
-Grid::Grid() {
-    numRows = 20;
-    numCols = 10;
-    cellSize = 30;
+Grid::Grid()
+    : numRows(GameConfig::GRID_ROWS),
+      numCols(GameConfig::GRID_COLS),
+      cellSize(GameConfig::CELL_SIZE),
+      colors(GetCellColors())
+{
     Initialize();
-    colors = GetCellColors();
 }
 
 void Grid::Initialize() {
@@ -19,7 +21,7 @@ void Grid::Initialize() {
     }
 }
 
-void Grid::print(){
+void Grid::print() const {
     for(int row = 0; row < numRows; row++){
         for(int column = 0; column < numCols; column++){
             cout << grid[row][column] << " ";
@@ -28,22 +30,21 @@ void Grid::print(){
     }
 }
 
-void Grid::LockBlock(const vector<Position>& positions, int id) {
-    for (const Position& pos : positions) {
-        if (pos.row >= 0 && pos.row < numRows && pos.column >= 0 && pos.column < numCols) {
-            grid[pos.row][pos.column] = id;
-        }
-    }
-}
-
-void Grid::Draw(int offsetX, int offsetY) {
+void Grid::Draw(int offsetX, int offsetY) const {
+    // Draw subtle grid lines on top of any colored cells
+    const Color lineColor = Fade(colors[0], 0.45f);
     for(int row = 0; row < numRows; row++){
         for(int column =0; column < numCols; column++){
             int cellValue = grid[row][column];
-            int x = offsetX + column * cellSize + 1;
-            int y = offsetY + row * cellSize + 1;
-            DrawRectangle(x, y, cellSize-1, cellSize-1, colors[cellValue]);
+            int x = offsetX + column * cellSize;
+            int y = offsetY + row * cellSize;
+
+            if (cellValue > 0) {
+                DrawRectangle(x + 1, y + 1, cellSize - 2, cellSize - 2, colors[cellValue]);
+            }
+
+            DrawRectangleLines(x, y, cellSize, cellSize, lineColor);
         }
-    
+
     }
 }
