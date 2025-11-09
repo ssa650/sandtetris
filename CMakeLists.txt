@@ -19,14 +19,20 @@ FetchContent_MakeAvailable(raylib)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # here we tell CMake to add all .cpp files for src to the executable file
-file(GLOB SOURCES "src/*.cpp")
-add_executable(sandtetris ${SOURCES} "include/block.h" "include/position.h" "src/position.cpp" "include/colors.h" "src/colors.cpp" "src/block.cpp" "src/blocks.cpp")
+file(GLOB_RECURSE SOURCES "src/*.cpp" "include/*.h")
+add_executable(sandtetris ${SOURCES})
 
 # here we tell CMake where we store our headers
 target_include_directories(sandtetris PRIVATE include)
 
 # here we tell CMake were using C++20
 target_compile_features(sandtetris PRIVATE cxx_std_20)
+
+# Enable compiler warnings for better code quality
+target_compile_options(sandtetris PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/W4>
+    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic>
+)
 
 # this tells CMake to link the following librarys to the executable file
 target_link_libraries(sandtetris raylib)
