@@ -53,7 +53,7 @@ Windows 10/11 [chocolatey](https://chocolatey.org/install) package manager insta
 - CMake stores build files along with the executable file in the build directory
 - the command: `cmake -S . -B build -G "MinGW Makefiles"` gets CMake to replace or make a new build directory and then make all the build files inside of it
 - to properly execute this command you must `cd` to the root project directory `/sandtetris/` where CMake can both find the build instructions and make the build directory
-- you need to replace the build directory with the `cmake -S . -B build -G "MinGW Makefiles` command if 
+- you need to replace the build directory with the `cmake -S . -B build` command if 
     - the build files are for a different OS
     - you changed compilers or build systems
     - you made a change to `CMakeLists.txt`
@@ -65,8 +65,8 @@ Windows 10/11 [chocolatey](https://chocolatey.org/install) package manager insta
 
 **I have set up gitignore to ignore all build files, SFML build files, vscode files etc so you dont have to worry about pushing your build folder**
 
-- So after you replace the build directory and build files with the `cmake -S . -B build -G "MinGW Makefiles` command everything should compile and work perfectly on your machine
-- the command: `cmake -S . -B build -G "MinGW Makefiles` only gets CMake to create the appropriate files for your environment
+- So after you replace the build directory and build files with the `cmake -S . -B build -G "MinGW Makefiles"` command everything should compile and work perfectly on your machine
+- the command: `cmake -S . -B build -G "MinGW Makefiles"` only gets CMake to create the appropriate files for your environment
 - once you have the proper build files set up you can use the command: `cmake --build build` to create an executable file
 - you must also run the `cmake --build build` command in the root directory of the project 
 - the newly created executable file will appear in the build directory
@@ -81,7 +81,6 @@ Windows 10/11 [chocolatey](https://chocolatey.org/install) package manager insta
 
 [raylib-docs]: https://www.raylib.com/index.html
 [cmake-docs]: https://cmake.org/cmake/help/latest/
-
 
 
 
