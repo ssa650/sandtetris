@@ -5,6 +5,7 @@ class SandPhysics {
 public:
     SandPhysics(Sand& sandGrid);
     void Update();
+    int ClearSpanningClusters();
 
 private:
     Sand& sand;

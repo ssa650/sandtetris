@@ -210,6 +210,7 @@ int main () {
 	bool gameStarted = false;
 	bool gameOver = false;
 	float fallTimer = 0.0f;
+	int score = 0;
 
     // Core loop: process input, simulate sand, update Tetris, draw UI
     while(WindowShouldClose() == false) {
@@ -220,6 +221,10 @@ int main () {
 		// Handle sand input and simulation each frame
 		spawner.HandleInput();
 		physics.Update();
+		int clearedSand = physics.ClearSpanningClusters();
+		if (gameStarted && clearedSand > 0) {
+			score += clearedSand;
+		}
 
         if (!gameStarted && buttonHover && IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
             gameStarted = true;
@@ -229,6 +234,7 @@ int main () {
             sand.Initialize();
             block = CreateRandomBlock();
             fallTimer = 0.0f;
+			score = 0;
             if (!BlockFits(block, grid, sand)) {
                 gameOver = true;
                 gameStarted = false;
@@ -265,6 +271,7 @@ int main () {
 		// Render sand grains first so falling piece sits on top
 		sand.Draw(playfieldOffsetX, playfieldOffsetY);
         grid.Draw(playfieldOffsetX, playfieldOffsetY);
+		DrawText(TextFormat("Score: %d", score), panelX + 16, panelY + 16, 24, RAYWHITE);
         if (gameStarted) {
             block.Draw(playfieldOffsetX, playfieldOffsetY);
         }
